@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-md-12 general-block-decorator">
+        <div class="row">
+            <div class="col-md-12 title title-without-tabs">
+                {intl d='redsys.bo.default' l="Redsys Configuration"}
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="row">
+                <div class="col-md-12">
+                    {form name="redsys.form.configure"}
+
+                        <form action="{url path="/admin/module/redsys/configure"}" method="post">
+                            {form_hidden_fields form=$form}
+
+                            {include file = "includes/inner-form-toolbar.html"
+                            hide_flags = true
+                            page_url   = "{url path='/admin/module/Redsys'}"
+                            close_url  = "{url path='/admin/modules'}"
+                            }
+
+                            {if $form_error}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-danger">{$form_error_message}</div>
+                                    </div>
+                                </div>
+                            {/if}
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="title title-without-tabs">{intl d='redsys.bo.default' l="Redsys platform configuration"}</p>
+
+                                    {render_form_field form=$form field='nombre_comercio'}
+                                    {render_form_field form=$form field='codigo_comercio'}
+                                    {render_form_field form=$form field='terminal'}
+                                    {render_form_field form=$form field='clave'}
+                                </div>
+
+                                <div class="col-md-5">
+                                    <p class="title title-without-tabs">{intl d='redsys.bo.default' l="URL configuration"}</p>
+
+                                    {render_form_field form=$form field='bank_server_url'}
+                                    {render_form_field form=$form field='bank_server_test_url'}
+                                    {render_form_field form=$form field='failure_return_url'}
+                                    {render_form_field form=$form field='success_return_url'}
+                                    {render_form_field form=$form field='callback_url'}
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <p class="title title-without-tabs">{intl d='redsys.bo.default' l="Payment configuration"}</p>
+
+                                    <div class="alert alert-info">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                        <a href="{url path="/admin/configuration/messages"}">
+                                            {intl d='redsys.bo.default' l='Configure payment confirmation and notification emails'}
+                                        </a>
+                                    </div>
+
+                                    {render_form_field form=$form field="send_confirmation_email_on_successful_payment"}
+                                    {render_form_field form=$form field='mode'}
+
+                                    <div class="well well-sm">
+                                        <p>{intl d='redsys.bo.default' l="In test mode, use the following information to simulate a successfull payment:"}</p>
+                                        <ul>
+                                            <li>{intl d='redsys.bo.default' l="Number: 4548812049400004"}</li>
+                                            <li>{intl d='redsys.bo.default' l="Date: 12/%year" year={1 + $smarty.now|date_format:"%y"}}</li>
+                                            <li>{intl d='redsys.bo.default' l="CVV2: 123"}</li>
+                                            <li>{intl d='redsys.bo.default' l="CIP: 123456"}</li>
+                                        </ul>
+                                    </div>
+
+                                    {render_form_field form=$form field='allowed_ip_list'}
+                                    {render_form_field form=$form field="minimum_amount"}
+                                    {render_form_field form=$form field="maximum_amount"}
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <span class="glyphicon glyphicon-cog"></span>
+                                                {intl d='redsys.bo.default' l="Redsys callback URL history"}
+                                            </h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div id="log-container" style="font-family: monospace; font-size: 12px; max-height: 400px; overflow-y: scroll">
+                                                {$trace_content nofilter}
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <a href="{url path='/admin/module/redsys/log'}" class="btn btn-sm btn-primary">
+                                                <span class="glyphicon glyphicon-download-alt"></span>
+                                                {intl d='redsys.bo.default' l="Download full log"}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    {/form}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var objDiv = document.getElementById("log-container");
+
+        objDiv.scrollTop = objDiv.scrollHeight;
+
+    </script>
+</div>

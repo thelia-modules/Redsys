@@ -1,0 +1,24 @@
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="redsys.configure" path="/admin/module/redsys/configure" methods="post">
+        <default key="_controller">Redsys\Controller\ConfigurationController::configure</default>
+    </route>
+
+    <route id="redsys.download.log" path="/admin/module/redsys/log">
+        <default key="_controller">Redsys\Controller\ConfigurationController::downloadLog</default>
+    </route>
+
+    <route id="redsys.payment.callback" path="/redsys/callback">
+        <default key="_controller">Redsys\Controller\PaymentController::processRedsysRequest</default>
+    </route>
+
+    <route id="redsys.payment.successfull" path="/redsys/success">
+        <default key="_controller">Redsys\Controller\PaymentController::processRedsysSuccessfulRequest</default>
+    </route>
+
+    <route id="redsys.payment.rejected" path="/redsys/rejected">
+        <default key="_controller">Redsys\Controller\PaymentController::processRedsysRejectedRequest</default>
+    </route>
+</routes>

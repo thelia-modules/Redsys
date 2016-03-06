@@ -1,0 +1,27 @@
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
+<fullnamespace>Redsys\Redsys</fullnamespace>
+<descriptive locale="en_US">
+    <title>Pay with credit card using Redsys</title>
+</descriptive>
+<descriptive locale="fr_FR">
+    <title>Paiement en carte bancaire avec Redsys</title>
+</descriptive>
+<languages>
+    <language>fr_FR</language>
+    <language>en_US</language>
+</languages>
+<version>1.0.0</version>
+<authors>
+    <author>
+        <name>Franck Allimant</name>
+        <company>CQFDev</company>
+        <email>franck@cqfdev.fr</email>
+        <website>www.cqfdev.fr</website>
+    </author>
+</authors>
+<type>payment</type>
+<thelia>2.2.0</thelia>
+<stability>prod</stability>
+</module>

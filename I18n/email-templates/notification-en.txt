@@ -1,0 +1,19 @@
+Hello,
+
+This message is a notification of the Redsys status for payment of order {$order_ref} :
+   - Payment status : {$redsys_payment_status}
+   - Message : {$redsys_message}
+
+{if $order_id != 0}
+To view this order in your back-office, please follow this link:
+
+   {url path="http://localhost/thelia2/index_dev.php/admin/order/update/{$order_id}"}
+{else}
+The order was not found. For details, please check the callback URL call history in the module's configuration page:
+
+   {url path="/admin/module/Redsys"}
+{/if}
+
+Have a nice day.
+
+Your shop {config key="store_name"}.
