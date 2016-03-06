@@ -23,9 +23,9 @@ composer require thelia/redsys-module:~1.0
 
 ## Utilisation
 
-Pour utiliser le module Redsys, vous devez tout d'abord le configurer. Pour ce faire, rendez-vous dans votre back-office, onglet Modules, et activez le module Redsys.
+Pour utiliser le module Redsys, vous devez tout d'abord le configurer. Pour ce faire, rendez-vous à la page "Modules" dans votre back-office, et activez le module Redsys.
 
-Cliquez ensuite sur "Configurer" sur la ligne du module, et renseignez les informations requises, que vous trouverez dans votre back-office Redsys.
+Cliquez ensuite sur le bouton de configuration du module, et renseignez les informations requises, que vous trouverez dans votre back-office Redsys.
 
 Lors de la phase de test, vous pouvez définir les adresses IP qui seront autorisées à utiliser le module en front-office, afin de ne pas laisser vos clients payer leur commandes avec Redsys pendant la phase de test.
 
@@ -55,9 +55,9 @@ composer require thelia/redsys-module:~1.0
 
 ## Usage
 
-You have to configure the Redsys module before starting to use it. To do so, go to the "Modules" tab of your Thelia back-office, and activate the Redsys module.
+You have to configure the Redsys module before starting to use it. To do so, go to the "Modules" page of your Thelia back-office, and activate the Redsys module.
 
-Then click the "Configure" button, and enter the required information, which are available in your Redsys back-office.
+Then click the configuration button, and enter the required information, which are available in your Redsys back-office.
 
 During the test phase, you can define the IP addresses allowed to use the Redsys module on the front office, so that your customers will not be able to pay with Redsys during this test phase. 
 
