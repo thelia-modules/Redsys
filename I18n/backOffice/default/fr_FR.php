@@ -12,5 +12,6 @@ return array(
     'Redsys Configuration' => 'Configuration Redsys',
     'Redsys callback URL history' => 'Historique des appels Redsys à l\'URL callback',
     'Redsys platform configuration' => 'Accès à la plate-forme Redsys',
+    'This module is sponsored by <a target="_blank" href="http://www.mediaboost.fr">Mediaboost</a>.' => 'Ce module est sponsorisé par <a target="_blank" href="http://www.mediaboost.fr">Mediaboost</a>.',
     'URL configuration' => 'Configuration des URLs',
 );

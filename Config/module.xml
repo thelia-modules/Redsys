@@ -3,10 +3,12 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
 <fullnamespace>Redsys\Redsys</fullnamespace>
 <descriptive locale="en_US">
-    <title>Pay with credit card using Redsys</title>
+    <title>Pay with credit card using Redsys.</title>
+    <subtitle>This module is sponsored by Mediaboost / www.mediaboost.fr</subtitle>
 </descriptive>
 <descriptive locale="fr_FR">
-    <title>Paiement en carte bancaire avec Redsys</title>
+    <title>Paiement en carte bancaire avec Redsys, sponsorisé par Mediaboost / www.mediaboost.fr</title>
+    <subtitle>Ce module est sponsorisé par Mediaboost / www.mediaboost.fr</subtitle>
 </descriptive>
 <languages>
     <language>fr_FR</language>
@@ -15,10 +17,10 @@
 <version>1.0.1</version>
 <authors>
     <author>
-        <name>Franck Allimant</name>
-        <company>CQFDev</company>
-        <email>franck@cqfdev.fr</email>
-        <website>www.cqfdev.fr</website>
+        <name>Franck Allimant, Laurent Marlin</name>
+        <company>CQFDev, Mediaboost</company>
+        <email>franck@cqfdev.fr, laurent@mediaboost.fr</email>
+        <website>www.cqfdev.fr, mediaboost.fr</website>
     </author>
 </authors>
 <type>payment</type>
