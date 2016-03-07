@@ -102,33 +102,33 @@ class ConfigurationForm extends BaseForm
                     'data' => Redsys::getConfigValue('bank_server_test_url', "https://sis-t.redsys.es:25443/sis/realizarPago"),
                     'label_attr' => [
                         'for' => 'bank_server_test_url',
-                        'help' => $this->translator->trans('The Redsys transaction server URL used during tests', [], Redsys::MODULE_DOMAIN)
+                        'help' => $this->translator->trans('The Redsys transaction server complete URL used during tests', [], Redsys::MODULE_DOMAIN)
                     ]
                 ]
             )
             ->add(
                 'success_return_url',
-                'url',
+                'text',
                 [
-                    'constraints' => [ new NotBlank(), new UrlValidator() ],
-                    'label' => $this->translator->trans('Return URL after a successful payment', [], Redsys::MODULE_DOMAIN),
-                    'data' => Redsys::getConfigValue('success_return_url', URL::getInstance()->absoluteUrl('/redsys/success')),
+                    'constraints' => [ new NotBlank() ],
+                    'label' => $this->translator->trans('Return path after a successful payment', [], Redsys::MODULE_DOMAIN),
+                    'data' => Redsys::getConfigValue('success_return_url', '/redsys/success'),
                     'label_attr' => [
                         'for' => 'success_return_url',
-                        'help' => $this->translator->trans('URL of the page displayed to your customer if its payement is successful', [], Redsys::MODULE_DOMAIN)
+                        'help' => $this->translator->trans('Absolute path (without hostname) of the page displayed to your customer if its payement is successful', [], Redsys::MODULE_DOMAIN)
                     ]
                 ]
             )
             ->add(
                 'failure_return_url',
-                'url',
+                'text',
                 [
                     'constraints' => [ new NotBlank(), new UrlValidator() ],
-                    'label' => $this->translator->trans('Return URL if payment fails', [], Redsys::MODULE_DOMAIN),
-                    'data' => Redsys::getConfigValue('failure_return_url', URL::getInstance()->absoluteUrl('/redsys/rejected')),
+                    'label' => $this->translator->trans('Return path if payment fails', [], Redsys::MODULE_DOMAIN),
+                    'data' => Redsys::getConfigValue('failure_return_url', '/redsys/rejected'),
                     'label_attr' => [
                         'for' => 'failure_return_url',
-                        'help' => $this->translator->trans('URL of the page displayed to your customer if its payement is not successful', [], Redsys::MODULE_DOMAIN)
+                        'help' => $this->translator->trans('Absolute path (without hostname) of the page displayed to your customer if its payement is not successful', [], Redsys::MODULE_DOMAIN)
                     ]
                 ]
             )

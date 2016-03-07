@@ -21,6 +21,7 @@ use Thelia\Model\MessageQuery;
 use Thelia\Model\ModuleImageQuery;
 use Thelia\Model\Order;
 use Thelia\Module\AbstractPaymentModule;
+use Thelia\Tools\URL;
 
 /**
  * Redsys payment module
@@ -191,8 +192,8 @@ class Redsys extends AbstractPaymentModule
         $redsysApi->setParameter("DS_MERCHANT_CONSUMERLANGUAGE", $this->getLangCode($order->getLang()->getLocale()));
         $redsysApi->setParameter("DS_MERCHANT_TERMINAL", Redsys::getConfigValue('terminal'));
         $redsysApi->setParameter("DS_MERCHANT_MERCHANTURL", Redsys::getConfigValue('callback_url'));
-        $redsysApi->setParameter("DS_MERCHANT_URLOK", Redsys::getConfigValue('success_return_url') . '?ref=' . $order->getId());
-        $redsysApi->setParameter("DS_MERCHANT_URLKO", Redsys::getConfigValue('failure_return_url') . '?ref=' . $order->getId());
+        $redsysApi->setParameter("DS_MERCHANT_URLOK", URL::getInstance()->absoluteUrl(Redsys::getConfigValue('success_return_url'), [ 'ref' => $order->getId() ]));
+        $redsysApi->setParameter("DS_MERCHANT_URLKO", URL::getInstance()->absoluteUrl(Redsys::getConfigValue('failure_return_url'), [ 'ref' => $order->getId() ]));
 
         // Datos de configuración
         $version = "HMAC_SHA256_V1";
