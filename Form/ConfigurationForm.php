@@ -123,7 +123,7 @@ class ConfigurationForm extends BaseForm
                 'failure_return_url',
                 'text',
                 [
-                    'constraints' => [ new NotBlank(), new UrlValidator() ],
+                    'constraints' => [ new NotBlank() ],
                     'label' => $this->translator->trans('Return path if payment fails', [], Redsys::MODULE_DOMAIN),
                     'data' => Redsys::getConfigValue('failure_return_url', '/redsys/rejected'),
                     'label_attr' => [
